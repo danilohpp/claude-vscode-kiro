@@ -3,16 +3,13 @@
 ## A Piada
 
 ```
-┌─────────────────────────────────────────────────────┐
-│  😈 Codex equivalente ao Claude com                 │
-│     --dangerously-skip-permissions?                 │
-│                                                     │
-│  $ codex --dangerously-bypass-approvals-and-sandbox │
-│  ⚠️  "não tente isso em produção"                   │
-│                                                     │
-│  ☠️ = Caos total, sem controle, sem segurança      │
-└─────────────────────────────────────────────────────┘
+"Codex equivalente ao Claude com --dangerously-skip-permissions?"
+
+$ codex --dangerously-bypass-approvals-and-sandbox
+⚠️ "não tente isso em produção"
 ```
+
+![Claude Bypass Meme](images/meme.png)
 
 ---
 
