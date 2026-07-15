@@ -1,0 +1,29 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "GitHub.copilot",
+    "ms-vscode.vscode-typescript-next",
+    "ms-vscode.makefile-tools",
+    "eamodio.gitlens",
+    "GitHub.vscode-pull-request-github",
+    "ms-vscode.remote-repositories",
+    "ms-vscode-remote.remote-ssh",
+    "ms-vscode-remote.remote-ssh-edit",
+    "ms-vscode-remote.remote-containers",
+    "ms-vscode.remote-explorer",
+    "thunder-tests.thunder-client",
+    "humao.rest-client",
+    "ritwickdey.LiveServer",
+    "WallabyJs.wallaby-vscode",
+    "Gruntfuggly.todo-tree",
+    "usernamehw.errorlens",
+    "streetsidesoftware.code-spell-checker",
+    "redhat.vscode-yaml",
+    "ms-azuretools.vscode-docker",
+    "ms-kubernetes-tools.vscode-kubernetes-tools",
+    "MS-CEINTL.vscode-language-pack-pt-br",
+    "nrwl.angular-console",
+    "svelte.svelte-vscode"
+  ]
+}

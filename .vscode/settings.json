@@ -1,0 +1,71 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.wordWrap": "on",
+  "editor.theme": "One Dark Pro",
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.iconTheme": "One Dark Pro Icons",
+  "files.exclude": {
+    "node_modules": true,
+    ".git": true,
+    "dist": true,
+    "build": true,
+    ".next": true,
+    "coverage": true
+  },
+  "files.watcherExclude": {
+    "node_modules/**": true,
+    ".git/**": true,
+    "dist/**": true
+  },
+  "search.exclude": {
+    "node_modules": true,
+    "dist": true,
+    ".next": true
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.wordWrap": "on",
+    "editor.formatOnSave": true
+  },
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.arrowParens": "always",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "git.ignoreLimitWarning": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true
+  },
+  "workbench.startupEditor": "newUntitledFile",
+  "window.zoomLevel": 0,
+  "extensions.recommendations": true,
+  "extensions.ignoreRecommendations": false,
+  "claude.model": "claude-opus-4-8",
+  "claude.effort": "xhigh",
+  "claude.thinking": true
+}

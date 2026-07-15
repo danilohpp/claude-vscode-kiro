@@ -1,0 +1,35 @@
+{
+  "name": "claude-vscode-kiro",
+  "version": "1.1.0",
+  "description": "Claude Code pre-configured for VS Code + Kiro with Opus 4.8, auto-bypass permissions, and 10-year transcript retention",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/index.js",
+    "build": "echo 'Build script - customize for your project'",
+    "test": "echo 'Test script - add your test runner'",
+    "lint": "eslint src --fix",
+    "format": "prettier --write 'src/**/*.{js,json,md}'",
+    "start": "node src/index.js",
+    "clean": "rm -rf dist build node_modules"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "vscode",
+    "kiro",
+    "ai-assistant"
+  ],
+  "author": "Danilo Henrique",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "axios": "^1.0.0"
+  }
+}

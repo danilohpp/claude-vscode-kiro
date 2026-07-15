@@ -1,18 +1,19 @@
-# 🎯 Claude Code Setup — Visual Basic + Kiro
+# 🎯 Claude Code Setup — VS Code + Kiro
 
 ![GitHub](https://img.shields.io/badge/GitHub-active-brightgreen)
 ![Claude](https://img.shields.io/badge/Claude%20Code-Opus%204.8-blue)
-![VB.NET](https://img.shields.io/badge/VB.NET-6.0+-orange)
+![VS Code](https://img.shields.io/badge/VS%20Code-Latest-blue?logo=visualstudiocode)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-Repositório pré-configurado para **Visual Basic** e **Kiro** com **Claude Code**, incluindo:
+Repositório pré-configurado para **VS Code** e **Kiro** com **Claude Code**, incluindo:
 
 ✅ **Modelo atualizado** (Claude Opus 4.8)  
 ✅ **Auto-bypass de permissions** (sem prompts)  
 ✅ **Menu interativo** para conectar GitHub, VPS, APIs  
 ✅ **10 anos de retenção** de histórico  
 ✅ **Thinking ativado** por padrão  
-✅ **Hooks inteligentes** para workflow
+✅ **VS Code settings pré-configurado**  
+✅ **Extensions recomendadas**
 
 ---
 
@@ -21,12 +22,14 @@ Repositório pré-configurado para **Visual Basic** e **Kiro** com **Claude Code
 ### Pré-requisitos
 - Git
 - Claude Code CLI (`claude`)
+- VS Code (recomendado)
 - SSH (para VPS)
-- PowerShell 5+ (Windows) ou Bash (Unix/Mac/WSL)
+- Node.js 16+ (para projetos)
+- PowerShell 5+ ou Bash
 
 ### 1️⃣ Clone o Repositório
 ```bash
-git clone https://github.com/seu-usuario/claude-vb-kiro
+git clone https://github.com/danilohpp/claude-vb-kiro
 cd claude-vb-kiro
 ```
 
@@ -39,16 +42,23 @@ cd claude-vb-kiro
 **Unix/Mac/WSL (Bash):**
 ```bash
 bash setup.sh
-chmod +x setup.sh  # Primeira vez
+chmod +x setup.sh
 ```
 
-### 3️⃣ Escolha as Opções
-O menu interativo vai te guiar por:
+### 3️⃣ Abra no VS Code
+```bash
+code .
+```
+
+O VS Code vai sugerir instalar as extensions recomendadas. Clique **"Install All"** ✅
+
+### 4️⃣ Escolha as Opções
+O menu setup vai te guiar:
 - ✅ GitHub authentication
 - ✅ VPS setup (SSH)
-- ✅ Evolution API
+- ✅ Kiro/Evolution API
 - ✅ Database config
-- ✅ Testes de conexão
+- ✅ Testes
 
 ---
 
@@ -58,20 +68,33 @@ O menu interativo vai te guiar por:
 | Configuração | Valor |
 |---|---|
 | **Model** | `claude-opus-4-8` |
-| **Effort** | `xhigh` (máximo raciocínio) |
+| **Effort** | `xhigh` (máximo) |
 | **Thinking** | ✅ Ativado |
 | **Retention** | 3.650 dias (~10 anos) |
-| **Permissions** | Auto-bypass (Git, Edit, Read, Write) |
+| **Permissions** | Auto-bypass |
 
-### ✨ Destaques
+### VS Code Pre-Configured
+```json
+{
+  "theme": "dark",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.exclude": {
+    "node_modules": true,
+    ".git": true,
+    "dist": true
+  }
+}
+```
 
-1. **Sem Prompts Chatos** — Todas as permissões automáticas
-2. **Thinking Ativado** — Respostas mais aprofundadas
-3. **10 Anos de Contexto** — Nunca perde histórico
-4. **Menu Setup** — Conecta GitHub, VPS, APIs automaticamente
-5. **Deploy Script** — `bash deploy.sh` = produção
-6. **Dev Container** — VSCode + Docker pré-configurado
-7. **VB.NET Best Practices** — Naming, comments, async patterns
+### Extensions Automáticas
+- ✅ Prettier (formatação)
+- ✅ ESLint (linting)
+- ✅ Thunder Client (API testing)
+- ✅ GitHub Copilot
+- ✅ REST Client
+- ✅ Postman
+- ✅ Kiro (custom, se disponível)
 
 ---
 
@@ -79,80 +102,92 @@ O menu interativo vai te guiar por:
 
 ```
 .
+├── .vscode/
+│   ├── settings.json           # VS Code config
+│   └── extensions.json         # Extensions recomendadas
 ├── .claude/
-│   ├── settings.json           # Configurações (tracked)
-│   ├── settings.local.json     # Secrets (gitignored)
-│   └── instructions.md         # Guia Claude
-├── .devcontainer/              # VSCode dev container
-├── .github/workflows/          # CI/CD (template)
-├── src/                        # Seu código VB
+│   ├── settings.json           # Claude Code config (Opus 4.8)
+│   ├── instructions.md         # Guias para Claude
+│   └── skills/                 # Skills customizadas
+├── .devcontainer/              # Dev container setup
+├── src/                        # Seu código
+│   ├── components/
+│   ├── utils/
+│   ├── services/
+│   └── index.js
+├── tests/                      # Testes
 ├── setup.ps1                   # Menu (Windows)
 ├── setup.sh                    # Menu (Unix)
-├── deploy.sh                   # Deploy automático
-├── CLAUDE.md                   # Contexto projeto
-├── FEATURES.md                 # Recursos especiais
-├── LICENSE                     # MIT
+├── deploy.sh                   # Deploy
+├── CLAUDE.md                   # Contexto
+├── FEATURES.md                 # Recursos
 └── README.md                   # Este arquivo
 ```
 
 ---
 
-## 🔧 Configuração
+## 🔧 Configuração Rápida
 
-### Adicione suas credenciais em `.claude/settings.local.json`:
+### VS Code
+1. Abra o arquivo `.vscode/settings.json`
+2. Customize cores, fonte, espaçamento
+3. Instale extensions sugeridas
 
+### Claude Code
+1. Abra `.claude/settings.json`
+2. Customize model, effort level
+3. Customize permissions se necessário
+
+### Credentials
+Crie `.claude/settings.local.json`:
 ```json
 {
   "env": {
     "GITHUB_TOKEN": "ghp_seu_token",
-    "VPS_HOST": "app.seuservidor.com.br",
+    "VPS_HOST": "app.seu-servidor.com.br",
     "VPS_USER": "seu_usuario",
     "EVOLUTION_API_URL": "http://localhost:8080",
-    "EVOLUTION_API_KEY": "sua_chave",
-    "DATABASE_URL": "Server=localhost;Database=seu_db;..."
+    "EVOLUTION_API_KEY": "sua_chave"
   }
 }
 ```
-
-**Este arquivo está no `.gitignore` — não será commitado**
 
 ---
 
 ## 💡 Exemplos de Uso
 
-### Refatorar Código VB
+### Refatorar Código
 ```bash
-você: Refatore essa função VB seguindo best practices
+você: Refatore esse arquivo para melhor performance
 
 claude: [thinking ▶ 2m45s]      ← Thinking ativado
-        [lê seu código]
+        [lê seu arquivo]
         [propõe 3 soluções]
         ✅ Implementação pronta   ← Sem prompts!
         ✅ Testes auto-executam
         ✅ Commit automático
 ```
 
-### Deploy na VPS
+### Deploy
 ```bash
 bash deploy.sh
 
 # Automaticamente:
-# 1️⃣  Compila em Release
-# 2️⃣  Roda testes
-# 3️⃣  Publica
-# 4️⃣  Upload via SSH
-# 5️⃣  Reinicia serviços
-# 6️⃣  Valida health check
+# ✅ Build (npm run build)
+# ✅ Testes (npm test)
+# ✅ Upload SSH
+# ✅ Deploy
+# ✅ Health check
 ```
 
-### Integrar Evolution API
+### Integração Kiro
 ```bash
-você: Configure webhooks da Evolution para sincronizar contatos
+você: Integre com Kiro para sincronizar contatos
 
-claude: [conecta Evolution API]
-        [cria listeners]
-        [implementa handlers]
-        [testa end-to-end]
+claude: [cria estrutura]
+        [implementa API client]
+        [adiciona handlers]
+        [testes E2E]
         ✅ Pronto para produção
 ```
 
@@ -160,32 +195,55 @@ claude: [conecta Evolution API]
 
 ## 📚 Documentação
 
-| Arquivo | Objetivo |
-|---------|----------|
-| **README.md** | Este arquivo — quick reference |
-| **CLAUDE.md** | Contexto completo do projeto |
-| **FEATURES.md** | Recursos especiais explicados |
-| **.claude/instructions.md** | Guia para Claude |
-| **.claude/settings.json** | Configurações gerais |
+| Arquivo | Para |
+|---------|------|
+| **README.md** | Quick reference |
+| **CLAUDE.md** | Contexto completo |
+| **FEATURES.md** | Recursos especiais |
+| **.claude/instructions.md** | Guias técnicos |
+| **.vscode/settings.json** | VS Code config |
 
 ---
 
 ## 🔐 Segurança
 
 ✅ Secrets em `.gitignore`  
+✅ `.env` não é commitado  
 ✅ SSH keys auto-detectadas  
-✅ Tokens em local settings apenas  
-✅ Auditoria git completa  
-✅ Deploy rastreável  
+✅ Tokens em local settings  
+✅ Auditoria completa via git  
 
 ---
 
 ## 🚀 Próximos Passos
 
 1. Clone o repositório
-2. Execute `setup.ps1` (Windows) ou `bash setup.sh` (Unix)
-3. Preencha `.claude/settings.local.json`
-4. Comece a trabalhar: `claude`
+2. Execute `setup.ps1` ou `bash setup.sh`
+3. Abra em VS Code (`code .`)
+4. Instale extensions sugeridas
+5. Preencha `.claude/settings.local.json`
+6. Comece a trabalhar com `claude`
+
+---
+
+## 🆘 Troubleshooting
+
+**VS Code não acha extensions?**
+```bash
+code --install-extension esbenp.prettier-vscode
+code --install-extension dbaeumer.vscode-eslint
+```
+
+**Claude Code não reconhece VS Code?**
+```bash
+code --version
+claude --version
+```
+
+**Permissions não funcionando?**
+```bash
+chmod +x setup.sh deploy.sh
+```
 
 ---
 
@@ -197,10 +255,10 @@ MIT License — Veja [LICENSE](LICENSE)
 
 <div align="center">
 
-**Mantido com ❤️ para desenvolvedores Visual Basic + Kiro**
+**Pronto para trabalhar com VS Code + Claude Code + Kiro? 🚀**
 
-v1.0.0 | Última atualização: 2026-07-15
+[Abra no VS Code](vscode://file/d:/Produtc%20Builder/claude-vb-kiro) | [Repositório GitHub](https://github.com/danilohpp/claude-vb-kiro)
 
-[![Repo](https://img.shields.io/badge/GitHub-Claude--VB--Kiro-blue?logo=github)](https://github.com/seu-usuario/claude-vb-kiro)
+Versão 1.1.0 (atualizado para VS Code)
 
 </div>

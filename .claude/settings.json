@@ -20,7 +20,8 @@
   },
   "env": {
     "KIRO_ENV": "development",
-    "VB_VERSION": "net6.0"
+    "NODE_ENV": "development",
+    "EDITOR": "code"
   },
   "hooks": {
     "PostToolUse": [
