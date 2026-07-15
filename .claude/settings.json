@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "theme": "dark",
+  "editorMode": "normal",
+  "effortLevel": "xhigh",
+  "model": "claude-opus-4-8",
+  "cleanupPeriodDays": 3650,
+  "permissions": {
+    "defaultMode": "auto",
+    "allow": [
+      "Bash(git *)",
+      "Bash(npm *)",
+      "Bash(powershell *)",
+      "Edit",
+      "Read",
+      "Write",
+      "Glob",
+      "Grep"
+    ]
+  },
+  "env": {
+    "KIRO_ENV": "development",
+    "VB_VERSION": "net6.0"
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '✅ Arquivo salvo com sucesso' 2>/dev/null || echo $null"
+          }
+        ]
+      }
+    ]
+  },
+  "attribution": {
+    "commit": "Claude Code - VB/Kiro Assistant",
+    "pr": "Claude Code - VB/Kiro Development"
+  },
+  "verbose": false,
+  "autoCompactEnabled": true,
+  "alwaysThinkingEnabled": true
+}
