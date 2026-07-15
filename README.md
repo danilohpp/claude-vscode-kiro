@@ -1,5 +1,9 @@
 # 🎯 Claude Code Setup — VS Code + Kiro
 
+> 🔥 **Wait, this auto-bypasses permissions?** 
+> 
+> **Yes!** But it's safe and fully controlled. [See the explanation with the meme →](MEME.md)
+
 ![GitHub](https://img.shields.io/badge/GitHub-active-brightgreen)
 ![Claude](https://img.shields.io/badge/Claude%20Code-Opus%204.8-blue)
 ![VS Code](https://img.shields.io/badge/VS%20Code-Latest-blue?logo=visualstudiocode)
@@ -8,7 +12,7 @@
 Repositório pré-configurado para **VS Code** e **Kiro** com **Claude Code**, incluindo:
 
 ✅ **Modelo atualizado** (Claude Opus 4.8)  
-✅ **Auto-bypass de permissions** (sem prompts)  
+✅ **Auto-bypass de permissions** (seguro e controlado)  
 ✅ **Menu interativo** para conectar GitHub, VPS, APIs  
 ✅ **10 anos de retenção** de histórico  
 ✅ **Thinking ativado** por padrão  
@@ -24,13 +28,13 @@ Repositório pré-configurado para **VS Code** e **Kiro** com **Claude Code**, i
 - Claude Code CLI (`claude`)
 - VS Code (recomendado)
 - SSH (para VPS)
-- Node.js 16+ (para projetos)
+- Node.js 16+
 - PowerShell 5+ ou Bash
 
 ### 1️⃣ Clone o Repositório
 ```bash
-git clone https://github.com/danilohpp/claude-vb-kiro
-cd claude-vb-kiro
+git clone https://github.com/danilohpp/claude-vscode-kiro
+cd claude-vscode-kiro
 ```
 
 ### 2️⃣ Execute o Setup
@@ -71,12 +75,11 @@ O menu setup vai te guiar:
 | **Effort** | `xhigh` (máximo) |
 | **Thinking** | ✅ Ativado |
 | **Retention** | 3.650 dias (~10 anos) |
-| **Permissions** | Auto-bypass |
+| **Permissions** | Auto-bypass (controlado) |
 
 ### VS Code Pre-Configured
 ```json
 {
-  "theme": "dark",
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.exclude": {
@@ -94,7 +97,7 @@ O menu setup vai te guiar:
 - ✅ GitHub Copilot
 - ✅ REST Client
 - ✅ Postman
-- ✅ Kiro (custom, se disponível)
+- ✅ E mais 24 extensões
 
 ---
 
@@ -120,9 +123,25 @@ O menu setup vai te guiar:
 ├── setup.sh                    # Menu (Unix)
 ├── deploy.sh                   # Deploy
 ├── CLAUDE.md                   # Contexto
-├── FEATURES.md                 # Recursos
+├── BEST_PRACTICES.md          # Guia de qualidade
+├── RECOMMENDATIONS.md          # Estratégia de sucesso
+├── MEME.md                     # Explicação: Por que é seguro?
 └── README.md                   # Este arquivo
 ```
+
+---
+
+## 🔐 Segurança: Auto-Bypass Seguro
+
+### Por Que Podemos Fazer Isso?
+
+1. ✅ **Whitelist Explícita** — Só permite git, npm, edit (não `rm -rf`)
+2. ✅ **Git History** — Tudo é auditável e reversível
+3. ✅ **Testes Automáticos** — Pre-commit hooks validam mudanças
+4. ✅ **Code Review** — Humanos aprovam antes de merge
+5. ✅ **Staging First** — Testa em homolog antes de produção
+
+[👉 Leia a explicação completa com o meme →](MEME.md)
 
 ---
 
@@ -199,30 +218,11 @@ claude: [cria estrutura]
 |---------|------|
 | **README.md** | Quick reference |
 | **CLAUDE.md** | Contexto completo |
-| **FEATURES.md** | Recursos especiais |
+| **BEST_PRACTICES.md** | Qualidade de código |
+| **RECOMMENDATIONS.md** | Estratégia de sucesso |
+| **MEME.md** | Por que é seguro fazer auto-bypass |
 | **.claude/instructions.md** | Guias técnicos |
 | **.vscode/settings.json** | VS Code config |
-
----
-
-## 🔐 Segurança
-
-✅ Secrets em `.gitignore`  
-✅ `.env` não é commitado  
-✅ SSH keys auto-detectadas  
-✅ Tokens em local settings  
-✅ Auditoria completa via git  
-
----
-
-## 🚀 Próximos Passos
-
-1. Clone o repositório
-2. Execute `setup.ps1` ou `bash setup.sh`
-3. Abra em VS Code (`code .`)
-4. Instale extensions sugeridas
-5. Preencha `.claude/settings.local.json`
-6. Comece a trabalhar com `claude`
 
 ---
 
@@ -247,6 +247,27 @@ chmod +x setup.sh deploy.sh
 
 ---
 
+## 🔐 Segurança
+
+✅ Secrets em `.gitignore`  
+✅ `.env` não é commitado  
+✅ SSH keys auto-detectadas  
+✅ Tokens em local settings  
+✅ Auditoria completa via git  
+
+---
+
+## 🚀 Próximos Passos
+
+1. Clone o repositório
+2. Execute `setup.ps1` ou `bash setup.sh`
+3. Abra em VS Code (`code .`)
+4. Instale extensions sugeridas
+5. Preencha `.claude/settings.local.json`
+6. Comece a trabalhar com `claude`
+
+---
+
 ## 📝 Licença
 
 MIT License — Veja [LICENSE](LICENSE)
@@ -257,8 +278,8 @@ MIT License — Veja [LICENSE](LICENSE)
 
 **Pronto para trabalhar com VS Code + Claude Code + Kiro? 🚀**
 
-[Abra no VS Code](vscode://file/d:/Produtc%20Builder/claude-vb-kiro) | [Repositório GitHub](https://github.com/danilohpp/claude-vb-kiro)
+[Clone agora](https://github.com/danilohpp/claude-vscode-kiro) | [Documentação](CLAUDE.md) | [Boas Práticas](BEST_PRACTICES.md) | [Por que é seguro?](MEME.md)
 
-Versão 1.1.0 (atualizado para VS Code)
+Versão 1.1.0 | Última atualização: 2026-07-15
 
 </div>
